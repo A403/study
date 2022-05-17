@@ -1,17 +1,17 @@
 package com.example.study;
-
+import com.example.study.Person;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 @Controller
-@RequestMapping("/hello")
 public class HelloController {
-
-    @RequestMapping("/01")
+    @Autowired
+    private Person person;
     @ResponseBody
-    public String hello01(){
-        return "hello springboot";
+    @RequestMapping("/hello")
+    public Person hello() {
+        return person;
     }
 }
 
